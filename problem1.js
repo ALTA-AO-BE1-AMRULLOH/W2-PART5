@@ -1,24 +1,33 @@
-frunction dragonOfLoowater(dragonHead, knightHeight) {
-  dragonHead.sort((a, b) => a - b);
-  knightHeight.sort((a, b) => a - b);
-
-  let totalGoldCoins = 0;
-  let dragonIndex = 0;
-
-  for (let i = 0; i < knightHeight.length; i++) {
-    while (dragonIndex < dragonHead.length && dragonHead[dragonIndex] <= knightHeight[i]) {
-      totalGoldCoins += knightHeight[i];
-      dragonIndex++;
-    }
+function jajanBoba(uang, callback) {
+  // console.log("Membeli Boba dengan uang:", uang);
+  console.time("JAJAN BOBA")
+  console.timeEnd("JAJAN BOBA")
+  const bobaPrice = 5000;
+  if (uang >= bobaPrice) {
+    const sisaUang = uang - bobaPrice;
+    callback(sisaUang);
+    // console.log("Selamat! Anda membeli Boba.");
+    // console.log("Jajan boba dengan harga Rp", bobaPrice);
+    console.log("Sisa uang", sisaUang);
+  } else {
+    console.log("Maaf, uang kamu tidak cukup untuk membeli Boba.");
+    
   }
-
-  return dragonIndex === dragonHead.length ? totalGoldCoins : "knight fall";
 }
-Now, let's test the function with the given test cases:
+function jajanSeblak(uang) {
+  console.time("JAJAN SEBLAK")
+  console.timeEnd("JAJAN SEBLAK")
+// console.log("Membeli Seblak dengan uang:", uang);
+const seblakPrice = 8000;
+if (uang >= seblakPrice) {
+  console.log("beli seblak dengan harga.", seblakPrice);
+} else {
+  return sisaUang;
+  // console.log("Maaf, uang kamu tidak cukup untuk membeli Seblak.");
+}
+}
 
-javascript
-Copy code
-console.log(dragonOfLoowater([5, 4], [7, 8, 4]));    // Output: 11
-console.log(dragonOfLoowater([5, 10], [5]));         // Output: "knight fall"
-console.log(dragonOfLoowater([7, 2], [4, 3, 1, 2])); // Output: "knight fall"
-console.log(dragonOfLoowater([7, 2], [2, 1, 8, 5])); // Output: 10
+
+
+jajanBoba(20000, jajanSeblak);
+jajanBoba(10000, jajanSeblak);
